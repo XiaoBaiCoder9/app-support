@@ -72,36 +72,6 @@ const APPS = [
       }
     ]
   },
-
-  {
-    id: "template-app",
-    template: true,
-    name: "Sample App (Template)",
-    tagline: "Duplicate this entry to list another app.",
-    bundleId: "com.example.app",
-    category: "Utilities",
-    platform: "iOS",
-    accent: "#34A34F",
-    icon: "S",
-    appStoreUrl: "",
-    summary:
-      "This entry is a placeholder. Replace its fields or delete it before publishing your support site.",
-    practices: {
-      onDevice: "Describe what this app processes or stores on the device.",
-      cloud: "Describe any optional cloud or sync storage used by this app.",
-      account: "State whether an account is required.",
-      tracking: "State whether tracking or analytics are used.",
-      ads: "State whether the app shows ads.",
-      purchases: "Describe how purchases are processed, if any.",
-      dataCollected: "List the data this app handles on behalf of the user."
-    },
-    faqs: [
-      {
-        q: "Sample question for this app?",
-        a: "Sample answer. Replace it with app-specific support guidance."
-      }
-    ]
-  }
 ];
 
 /* ---------- helpers (used by all pages) ---------- */
