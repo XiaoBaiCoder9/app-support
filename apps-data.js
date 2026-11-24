@@ -72,6 +72,67 @@ const APPS = [
       }
     ]
   },
+  {
+    id: "idphoto",
+    name: "ID Photo · 一寸相",
+    tagline: "Guided ID photos with compliance checks, processed on device.",
+    bundleId: "work.qingyunge.picture",
+    category: "Photo & Video",
+    platform: "iOS",
+    accent: "#0D5F58",
+    icon: "ID",
+    appStoreUrl: "",
+    summary:
+      "ID Photo turns your iPhone into an ID photo studio. Choose from 60+ official sizes, shoot inside an exact-ratio guide frame, replace the background, crop to spec, run a compliance check on head proportion and head-room, then export, share or lay out a print sheet — all processed on your device.",
+    practices: {
+      onDevice:
+        "Portraits you shoot or import are processed entirely on your device with Apple Vision and Core Image: face detection, person segmentation, background replacement, cropping and the compliance check. Finished photos are stored in the app's local database.",
+      cloud:
+        "Optional iCloud sync (Pro) stores your projects in your own private iCloud (CloudKit) database tied to your Apple ID. We run no server of our own and cannot read your synced projects.",
+      account: "No account or sign-up is required to use the app.",
+      tracking:
+        "No advertising identifiers, cross-app tracking, device fingerprinting, or third-party analytics are used. The app contains no third-party SDKs.",
+      ads: "The app contains no ads.",
+      purchases:
+        "The Pro subscription is processed by Apple through the App Store. We do not receive your credit card or payment details; we only see aggregate sales reports.",
+      dataCollected:
+        "Photos you shoot or import, the generated ID photos, chosen size settings and local app preferences saved on your device. Nothing is transmitted to us."
+    },
+    faqs: [
+      {
+        q: "Are my photos uploaded anywhere?",
+        a: "No. Face detection, background replacement, cropping, export and the compliance check all run on your device. The app has no server and does not collect photos, device identifiers or usage data."
+      },
+      {
+        q: "Why does the app say my photo is not compliant?",
+        a: "The compliance card measures head proportion, head-room above the hair, horizontal centring and background evenness against the range published for the selected size. A green check means within the official range, a yellow warning means an acceptable deviation, and a red cross means it is clearly off. Requirements differ by agency, so always confirm with the issuing authority."
+      },
+      {
+        q: "What is included in the free version?",
+        a: "The free version lets you shoot, import, edit, preview, run the compliance check and save up to 3 projects. Pro (yearly subscription) unlocks watermark-free export at the exact spec pixels and DPI, one-tap sharing, print sheets (4×6, 5×7, A4), unlimited projects and iCloud sync."
+      },
+      {
+        q: "Why does tapping “Save to Photos” or “Share” open the purchase screen?",
+        a: "Export and sharing are Pro features. This is the single paid gate in the app; the free plan still covers the whole shooting, editing and compliance flow. Restore Purchases is available on the same screen."
+      },
+      {
+        q: "How do I cancel the subscription?",
+        a: "Subscriptions are managed by Apple. On your iPhone or iPad go to Settings → your name → Subscriptions, select ID Photo and choose Cancel Subscription. Pro stays active until the end of the current period."
+      },
+      {
+        q: "How do I request a refund?",
+        a: "App Store purchases are billed by Apple. Refund requests are handled at reportaproblem.apple.com; sign in with the Apple ID that made the purchase and follow the steps."
+      },
+      {
+        q: "How do I restore Pro on a new device?",
+        a: "Open the paywall (tap the Pro banner on the home screen, or the Pro card in Settings) and tap “Restore Purchases”. Sign in with the same Apple ID used for the original purchase. If you enabled iCloud sync, your projects appear automatically once sync finishes."
+      },
+      {
+        q: "The app crashed or a button does nothing. What should I send?",
+        a: "Email our support mailbox with the app version, your device model, iOS version, the steps that led to the issue and a screenshot if possible. We reply within 2 business days."
+      }
+    ]
+  },
 ];
 
 /* ---------- helpers (used by all pages) ---------- */
