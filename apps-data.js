@@ -9,7 +9,7 @@ const SITE = {
   brand: "App Support Center",
   owner: "XiaoBaiCoder9",
   // Replace this with the real support mailbox before publishing.
-  contactEmail: "support@example.com",
+  contactEmail: "2357179575@qq.com",
   effectiveDate: "November 24, 2026",
   copyright: "© 2026 XiaoBaiCoder9. All rights reserved.",
   reportProblemUrl: "https://reportaproblem.apple.com"
