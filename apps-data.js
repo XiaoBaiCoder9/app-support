@@ -76,7 +76,7 @@ const APPS = [
     id: "idphoto",
     name: "ID Photo · 一寸相",
     tagline: "Guided ID photos with compliance checks, processed on device.",
-    bundleId: "work.qingyunge.picture",
+    bundleId: "work.qingyunge.pictureId",
     category: "Photo & Video",
     platform: "iOS",
     accent: "#0D5F58",
