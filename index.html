@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>App Support Center</title>
+  <meta name="description" content="Official support center for XiaoBaiCoder9 apps. Find answers, restore purchases, and contact support." />
+  <style>
+    :root {
+      --bg: #f5f6f8;
+      --surface: #ffffff;
+      --text: #16181d;
+      --text-secondary: #5b616e;
+      --border: #e4e7ec;
+      --accent: #0a84ff;
+      --accent-soft: #e8f2ff;
+      --radius: 16px;
+      --shadow: 0 1px 3px rgba(16, 24, 40, 0.08);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+
+    /* Header */
+    header.site {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; height: 60px; }
+    .brand { font-weight: 700; font-size: 17px; color: var(--text); }
+    .brand:hover { text-decoration: none; }
+    nav.site a { margin-left: 18px; color: var(--text-secondary); font-size: 15px; }
+    nav.site a:hover { color: var(--accent); text-decoration: none; }
+
+    /* Hero */
+    .hero { padding: 56px 0 28px; text-align: center; }
+    .hero h1 { font-size: 32px; margin: 0 0 12px; letter-spacing: -0.02em; }
+    .hero p { color: var(--text-secondary); font-size: 17px; max-width: 620px; margin: 0 auto; }
+    .hero-actions { margin-top: 22px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 11px 18px; border-radius: 12px; font-size: 15px; font-weight: 600;
+      border: 1px solid transparent; cursor: pointer;
+    }
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-primary:hover { text-decoration: none; filter: brightness(1.05); }
+    .btn-secondary { background: var(--surface); color: var(--text); border-color: var(--border); }
+    .btn-secondary:hover { text-decoration: none; border-color: #c9cfd8; }
+
+    /* Search */
+    .search-wrap { max-width: 560px; margin: 28px auto 8px; }
+    .search-wrap input {
+      width: 100%; padding: 13px 16px; font-size: 16px;
+      border: 1px solid var(--border); border-radius: 12px; background: var(--surface);
+      color: var(--text); outline: none;
+    }
+    .search-wrap input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+
+    /* Sections */
+    section { padding: 28px 0; }
+    .section-title { font-size: 22px; margin: 0 0 18px; letter-spacing: -0.01em; }
+
+    /* App grid */
+    .app-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 18px; }
+    .app-card {
+      background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+      box-shadow: var(--shadow); padding: 22px; display: flex; flex-direction: column; gap: 12px;
+    }
+    .app-head { display: flex; align-items: center; gap: 14px; }
+    .app-icon {
+      width: 48px; height: 48px; border-radius: 13px; display: flex; align-items: center; justify-content: center;
+      color: #fff; font-weight: 700; font-size: 22px; flex-shrink: 0;
+    }
+    .app-name { font-size: 17px; font-weight: 700; }
+    .app-meta { color: var(--text-secondary); font-size: 13px; }
+    .app-tagline { color: var(--text-secondary); font-size: 15px; margin: 0; }
+    .app-summary { color: var(--text-secondary); font-size: 14px; margin: 0; flex: 1; }
+    .app-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 4px; }
+    .tag {
+      display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: 12px;
+      background: var(--bg); color: var(--text-secondary); border: 1px solid var(--border);
+    }
+    .template-note { color: #b54708; background: #fff4e5; border: 1px solid #fecd8a; border-radius: 10px; padding: 8px 12px; font-size: 13px; }
+
+    /* FAQ accordion */
+    .faq-list { display: flex; flex-direction: column; gap: 12px; }
+    .faq-item { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
+    .faq-q {
+      width: 100%; text-align: left; background: none; border: none; padding: 16px 18px;
+      font-size: 15.5px; font-weight: 600; color: var(--text); cursor: pointer;
+      display: flex; justify-content: space-between; align-items: center; gap: 12px;
+    }
+    .faq-q .chevron { transition: transform 0.2s; color: var(--text-secondary); }
+    .faq-item.open .chevron { transform: rotate(180deg); }
+    .faq-a { display: none; padding: 0 18px 16px; color: var(--text-secondary); font-size: 14.5px; }
+    .faq-item.open .faq-a { display: block; }
+
+    /* Contact */
+    .contact-card {
+      background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+      box-shadow: var(--shadow); padding: 26px;
+    }
+    .contact-card ul { margin: 12px 0 0; padding-left: 20px; color: var(--text-secondary); }
+    .contact-card li { margin: 6px 0; }
+
+    footer.site { padding: 28px 0 40px; color: var(--text-secondary); font-size: 13px; border-top: 1px solid var(--border); margin-top: 24px; }
+    .footer-inner { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+    footer.site a { color: var(--text-secondary); }
+
+    .empty-state { text-align: center; color: var(--text-secondary); padding: 40px 0; display: none; }
+
+    @media (max-width: 640px) {
+      .hero h1 { font-size: 26px; }
+      .app-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" id="brand"></a>
+      <nav class="site">
+        <a href="index.html">Support</a>
+        <a href="privacy.html">Privacy Policy</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>How can we help?</h1>
+      <p id="hero-sub"></p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" id="contact-main" href="#">Contact Support</a>
+        <a class="btn btn-secondary" href="privacy.html">Read the Privacy Policy</a>
+      </div>
+      <div class="search-wrap">
+        <input type="search" id="search" placeholder="Search our apps…" autocomplete="off" />
+      </div>
+    </section>
+
+    <section id="apps-section">
+      <h2 class="section-title">Our Apps</h2>
+      <div class="app-grid" id="app-grid"></div>
+      <p class="empty-state" id="empty-state">No apps match your search.</p>
+    </section>
+
+    <section id="general-faq">
+      <h2 class="section-title">General Questions</h2>
+      <div class="faq-list" id="general-faq-list"></div>
+    </section>
+
+    <section id="contact">
+      <div class="contact-card">
+        <h2 class="section-title" style="margin-bottom:8px;">Still need help?</h2>
+        <p style="color:var(--text-secondary); margin:0;">
+          Send us an email and we will get back to you. To speed up the response, please include:
+        </p>
+        <ul>
+          <li>The app name and version you are using</li>
+          <li>Your device model and iOS / iPadOS version</li>
+          <li>The steps that led to the problem</li>
+          <li>A screenshot or short description of what you expected to happen</li>
+        </ul>
+        <div style="margin-top:18px;">
+          <a class="btn btn-primary" id="contact-secondary" href="#">Email Support</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site">
+    <div class="container footer-inner">
+      <span id="copyright"></span>
+      <span><a href="privacy.html">Privacy Policy</a></span>
+    </div>
+  </footer>
+
+  <script src="apps-data.js"></script>
+  <script>
+    document.getElementById("brand").textContent = SITE.brand;
+    document.getElementById("hero-sub").textContent =
+      "Find answers for " + SITE.owner + " apps, restore purchases, review privacy details, or reach out to our support team.";
+    document.getElementById("copyright").textContent = SITE.copyright;
+
+    const mailto = "mailto:" + SITE.contactEmail + "?subject=" + encodeURIComponent("Support request");
+    document.getElementById("contact-main").href = mailto;
+    document.getElementById("contact-secondary").href = mailto;
+
+    const grid = document.getElementById("app-grid");
+    const searchInput = document.getElementById("search");
+    const emptyState = document.getElementById("empty-state");
+
+    function appCard(app) {
+      const card = document.createElement("article");
+      card.className = "app-card";
+      card.dataset.name = (app.name + " " + app.tagline + " " + app.category).toLowerCase();
+
+      const head = document.createElement("div");
+      head.className = "app-head";
+      head.innerHTML =
+        '<div class="app-icon" style="background:' + esc(app.accent) + '">' + esc(app.icon) + "</div>" +
+        '<div><div class="app-name">' + esc(app.name) + "</div>" +
+        '<div class="app-meta"><span class="tag">' + esc(app.category) + "</span> " +
+        '<span class="tag">' + esc(app.platform) + "</span></div></div>";
+
+      const tagline = document.createElement("p");
+      tagline.className = "app-tagline";
+      tagline.textContent = app.tagline;
+
+      const summary = document.createElement("p");
+      summary.className = "app-summary";
+      summary.textContent = app.summary;
+
+      const note = document.createElement("div");
+      note.className = "template-note";
+      note.textContent = "Template entry — replace or remove before publishing.";
+      note.style.display = app.template ? "block" : "none";
+
+      const actions = document.createElement("div");
+      actions.className = "app-actions";
+      const faqBtn = document.createElement("button");
+      faqBtn.className = "btn btn-secondary";
+      faqBtn.textContent = "View FAQs";
+      faqBtn.addEventListener("click", function () {
+        const panel = card.querySelector(".app-faqs");
+        const open = panel.style.display === "block";
+        panel.style.display = open ? "none" : "block";
+        faqBtn.textContent = open ? "View FAQs" : "Hide FAQs";
+      });
+      const privacyLink = document.createElement("a");
+      privacyLink.className = "btn btn-secondary";
+      privacyLink.href = appPrivacyUrl(app.id);
+      privacyLink.textContent = "Privacy Policy";
+      actions.appendChild(faqBtn);
+      actions.appendChild(privacyLink);
+
+      const faqs = document.createElement("div");
+      faqs.className = "app-faqs";
+      faqs.style.display = "none";
+      faqs.innerHTML = '<div class="faq-list">' + app.faqs.map(function (f, i) {
+        return '<div class="faq-item">' +
+          '<button class="faq-q" type="button">' + esc(f.q) +
+          ' <span class="chevron">▾</span></button>' +
+          '<div class="faq-a">' + esc(f.a) + "</div></div>";
+      }).join("") + "</div>";
+
+      card.append(head, tagline, summary, note, actions, faqs);
+      return card;
+    }
+
+    function renderApps(filter) {
+      grid.innerHTML = "";
+      const q = (filter || "").trim().toLowerCase();
+      let visible = 0;
+      APPS.forEach(function (app) {
+        if (q && !cardMatches(app, q)) return;
+        grid.appendChild(appCard(app));
+        visible++;
+      });
+      emptyState.style.display = visible === 0 ? "block" : "none";
+    }
+
+    function cardMatches(app, q) {
+      return (app.name + " " + app.tagline + " " + app.category + " " + app.platform)
+        .toLowerCase().indexOf(q) !== -1;
+    }
+
+    searchInput.addEventListener("input", function () { renderApps(searchInput.value); });
+
+    const GENERAL_FAQS = [
+      {
+        q: "How do I update an app?",
+        a: "Updates are delivered through the App Store. Open the App Store, search for the app, and tap Update if one is available. You can also enable automatic updates in Settings → App Store → App Updates."
+      },
+      {
+        q: "I changed devices. How do I get my purchases back?",
+        a: "Open the app on the new device, sign in with the same Apple ID, and use the “Restore Purchases” option inside the app. Free local documents are not transferred unless you enabled the app’s own sync option."
+      },
+      {
+        q: "How are refunds handled?",
+        a: "All purchases are billed by Apple. To request a refund, visit reportaproblem.apple.com, sign in with the purchasing Apple ID, and follow the instructions there. Developers cannot issue refunds directly."
+      },
+      {
+        q: "Do you collect my personal data?",
+        a: "Our apps are designed to process your content on your device. See the Privacy Policy for per-app details, including any optional sync or purchased features."
+      },
+      {
+        q: "How can I report a security or privacy issue?",
+        a: "Email our support mailbox with the subject “Security report”. Include the app name, version and a description of the issue. We review every report privately."
+      }
+    ];
+
+    function renderGeneralFaqs() {
+      const list = document.getElementById("general-faq-list");
+      list.innerHTML = GENERAL_FAQS.map(function (f) {
+        return '<div class="faq-item">' +
+          '<button class="faq-q" type="button">' + esc(f.q) +
+          ' <span class="chevron">▾</span></button>' +
+          '<div class="faq-a">' + esc(f.a) + "</div></div>";
+      }).join("");
+    }
+
+    document.addEventListener("click", function (e) {
+      const q = e.target.closest(".faq-q");
+      if (q) q.parentElement.classList.toggle("open");
+    });
+
+    renderApps("");
+    renderGeneralFaqs();
+  </script>
+</body>
+</html>

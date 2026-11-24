@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — App Support Center</title>
+  <meta name="description" content="Privacy policy for XiaoBaiCoder9 apps, covering on-device processing, optional sync, purchases, and contact." />
+  <style>
+    :root {
+      --bg: #f5f6f8;
+      --surface: #ffffff;
+      --text: #16181d;
+      --text-secondary: #5b616e;
+      --border: #e4e7ec;
+      --accent: #0a84ff;
+      --accent-soft: #e8f2ff;
+      --radius: 16px;
+      --shadow: 0 1px 3px rgba(16, 24, 40, 0.08);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; background: var(--bg); color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.65;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: 860px; margin: 0 auto; padding: 0 20px; }
+
+    header.site { background: var(--surface); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 10; }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; height: 60px; }
+    .brand { font-weight: 700; font-size: 17px; color: var(--text); }
+    .brand:hover { text-decoration: none; }
+    nav.site a { margin-left: 18px; color: var(--text-secondary); font-size: 15px; }
+    nav.site a:hover { color: var(--accent); text-decoration: none; }
+
+    .page-head { padding: 44px 0 18px; }
+    .page-head h1 { font-size: 30px; margin: 0 0 10px; letter-spacing: -0.02em; }
+    .page-head p { color: var(--text-secondary); margin: 0; }
+    .effective { color: var(--text-secondary); font-size: 14px; margin-top: 10px; }
+
+    section { padding: 22px 0; }
+    h2 { font-size: 21px; margin: 0 0 14px; letter-spacing: -0.01em; }
+    h3 { font-size: 16px; margin: 0 0 6px; }
+    p { margin: 0 0 12px; }
+
+    .chips { display: flex; flex-wrap: wrap; gap: 10px; margin: 16px 0; }
+    .chip {
+      padding: 9px 15px; border-radius: 999px; border: 1px solid var(--border);
+      background: var(--surface); color: var(--text); font-size: 14px; cursor: pointer;
+    }
+    .chip.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+    .app-card {
+      background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+      box-shadow: var(--shadow); padding: 22px; margin-bottom: 16px;
+    }
+    .app-head { display: flex; align-items: center; gap: 14px; margin-bottom: 12px; }
+    .app-icon { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; font-size: 20px; flex-shrink: 0; }
+    .app-name { font-size: 17px; font-weight: 700; }
+    .app-meta { color: var(--text-secondary); font-size: 13px; }
+    .practice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 10px; }
+    .practice { border-top: 1px solid var(--border); padding-top: 12px; }
+    .practice h3 { color: var(--text); }
+    .practice p { color: var(--text-secondary); font-size: 14px; margin: 0; }
+    .bundle { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px; color: var(--text-secondary); }
+
+    .policy-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); padding: 26px; }
+    .policy-card ol { margin: 0; padding-left: 22px; }
+    .policy-card > ol > li { margin: 18px 0; }
+    .policy-card li > ul { margin: 8px 0 0; padding-left: 20px; color: var(--text-secondary); }
+    .policy-card li > ul li { margin: 6px 0; }
+
+    .contact-box { background: var(--accent-soft); border: 1px solid #cfe6ff; border-radius: 14px; padding: 18px 20px; margin-top: 14px; }
+
+    footer.site { padding: 28px 0 40px; color: var(--text-secondary); font-size: 13px; border-top: 1px solid var(--border); margin-top: 24px; }
+    .footer-inner { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+    footer.site a { color: var(--text-secondary); }
+
+    @media (max-width: 640px) {
+      .practice-grid { grid-template-columns: 1fr; }
+      .page-head h1 { font-size: 25px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" id="brand"></a>
+      <nav class="site">
+        <a href="index.html">Support</a>
+        <a href="privacy.html">Privacy Policy</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="page-head">
+      <h1>Privacy Policy</h1>
+      <p>This policy describes how our apps handle information. It applies to every app published by <span id="owner"></span>, unless a separate policy is shown inside that app.</p>
+      <p class="effective" id="effective"></p>
+    </div>
+
+    <section id="app-practices">
+      <h2>Per-App Practices</h2>
+      <p style="color:var(--text-secondary);">Select an app to review its specific data practices. The general policy below applies to all apps.</p>
+      <div class="chips" id="chips"></div>
+      <div id="app-cards"></div>
+    </section>
+
+    <section id="general-policy">
+      <h2>General Policy</h2>
+      <div class="policy-card">
+        <ol>
+          <li>
+            <strong>Information we process</strong>
+            <p>Our apps process the content you choose to create or import — such as scanned documents, recognized text, images, signatures, notes and settings. We do not require you to create an account to use the core features.</p>
+          </li>
+          <li>
+            <strong>On-device processing</strong>
+            <p>Where a feature runs locally, your content is processed and stored on your own device. We do not sell your personal data, and we do not use your documents for advertising or profiling.</p>
+          </li>
+          <li>
+            <strong>Optional cloud and sync storage</strong>
+            <p>Some apps offer an optional sync feature through your own private cloud account (for example, Apple iCloud / CloudKit). When you enable it, your data is stored under your account and is accessible only to you. We do not operate a separate developer server for your app content, except where an app description states otherwise.</p>
+          </li>
+          <li>
+            <strong>Purchases and subscriptions</strong>
+            <p>In-app purchases, subscriptions and restore actions are processed by Apple through the App Store. We receive transaction information needed to unlock purchased features, but we do not receive your credit card, billing address or full payment details. Subscription terms, pricing and renewal rules are shown on the in-app purchase screen.</p>
+          </li>
+          <li>
+            <strong>Advertising, analytics and tracking</strong>
+            <p>Our apps do not show ads and do not use advertising identifiers. We do not track your activity across other apps or websites, and we do not share personal data with third-party advertisers. Any embedded third-party SDK, if present, is listed in the per-app practices above and processes data only as described by its own provider.</p>
+          </li>
+          <li>
+            <strong>Data retention and deletion</strong>
+            <p>Content stored on your device remains there until you delete it inside the app or remove the app from your device. Deleting the app removes its local data. If sync is enabled, removing synced content follows the rules of the cloud provider you chose.</p>
+          </li>
+          <li>
+            <strong>Children's privacy</strong>
+            <p>Our apps are not directed to children under the age required by applicable law, and we do not knowingly collect personal data from them. If you believe a child has provided us personal data, contact us so we can remove it.</p>
+          </li>
+          <li>
+            <strong>Security</strong>
+            <p>We follow reasonable practices to protect information handled by the apps. No method of transmission or storage is completely secure, but we limit access to app data to what the device and the platform provide.</p>
+          </li>
+          <li>
+            <strong>Changes to this policy</strong>
+            <p>We may update this policy as apps change or as required by law. The “effective date” at the top reflects the latest revision. Material changes will be noted on this page and, where appropriate, inside the app.</p>
+          </li>
+          <li>
+            <strong>Contact</strong>
+            <p>If you have questions, requests or concerns about this policy or how an app handles your information, reach us through the contact below. When writing, please specify the app name and version.</p>
+            <div class="contact-box">
+              <p style="margin:0;"><strong>Email:</strong> <a id="contact-email" href="#"></a></p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site">
+    <div class="container footer-inner">
+      <span id="copyright"></span>
+      <span><a href="index.html">Support Center</a></span>
+    </div>
+  </footer>
+
+  <script src="apps-data.js"></script>
+  <script>
+    document.getElementById("brand").textContent = SITE.brand;
+    document.getElementById("owner").textContent = SITE.owner;
+    document.getElementById("effective").textContent = "Effective date: " + SITE.effectiveDate;
+    document.getElementById("copyright").textContent = SITE.copyright;
+    document.getElementById("contact-email").textContent = SITE.contactEmail;
+    document.getElementById("contact-email").href = "mailto:" + SITE.contactEmail;
+
+    const chipsWrap = document.getElementById("chips");
+    const cardsWrap = document.getElementById("app-cards");
+    const preselected = currentAppIdFromQuery();
+
+    function practiceRow(title, text) {
+      return '<div class="practice"><h3>' + esc(title) + "</h3><p>" + esc(text) + "</p></div>";
+    }
+
+    function renderCard(app) {
+      const card = document.createElement("article");
+      card.className = "app-card";
+      card.id = "app-" + app.id;
+      const p = app.practices;
+      card.innerHTML =
+        '<div class="app-head">' +
+          '<div class="app-icon" style="background:' + esc(app.accent) + '">' + esc(app.icon) + "</div>" +
+          '<div><div class="app-name">' + esc(app.name) + "</div>" +
+          '<div class="app-meta">' + esc(app.category) + " · " + esc(app.platform) +
+          ' · <span class="bundle">' + esc(app.bundleId) + "</span></div></div>" +
+        "</div>" +
+        "<p style='color:var(--text-secondary);font-size:14px;'>" + esc(app.summary) + "</p>" +
+        '<div class="practice-grid">' +
+          practiceRow("On-device processing", p.onDevice) +
+          practiceRow("Cloud & sync", p.cloud) +
+          practiceRow("Account", p.account) +
+          practiceRow("Tracking & analytics", p.tracking) +
+          practiceRow("Advertising", p.ads) +
+          practiceRow("Purchases", p.purchases) +
+        "</div>";
+      if (app.template) {
+        const note = document.createElement("p");
+        note.style.color = "#b54708";
+        note.style.fontSize = "13px";
+        note.textContent = "Template entry — replace or remove before publishing.";
+        card.appendChild(note);
+      }
+      return card;
+    }
+
+    function renderChips(activeId) {
+      chipsWrap.innerHTML = "";
+      const all = document.createElement("button");
+      all.className = "chip" + (!activeId ? " active" : "");
+      all.textContent = "All apps";
+      all.addEventListener("click", function () { selectApp(""); });
+      chipsWrap.appendChild(all);
+
+      APPS.forEach(function (app) {
+        const chip = document.createElement("button");
+        chip.className = "chip" + (app.id === activeId ? " active" : "");
+        chip.textContent = app.name;
+        chip.addEventListener("click", function () { selectApp(app.id); });
+        chipsWrap.appendChild(chip);
+      });
+    }
+
+    function renderCards(activeId) {
+      cardsWrap.innerHTML = "";
+      APPS.forEach(function (app) {
+        if (activeId && app.id !== activeId) return;
+        cardsWrap.appendChild(renderCard(app));
+      });
+    }
+
+    function selectApp(id) {
+      renderChips(id);
+      renderCards(id);
+      const url = new URL(window.location.href);
+      if (id) url.searchParams.set("app", id); else url.searchParams.delete("app");
+      history.replaceState(null, "", url);
+    }
+
+    renderChips(preselected);
+    renderCards(preselected);
+  </script>
+</body>
+</html>
