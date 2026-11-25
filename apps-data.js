@@ -30,7 +30,7 @@ const APPS = [
     icon: "123",
     appStoreUrl: "",
     summary:
-      "MathGarden is an offline maths learning app for children aged 6–12. It contains 36 original illustrated lessons (12 books, grades 1–6, 3 core lessons each) and a practice mode with 30 topics. Each lesson follows look at a picture → manipulate the picture → answer 3 questions, and every question in the app has a diagram. The app has no account, no server and no ads; progress is stored on the device.",
+      "MathGarden is an offline maths learning app for children aged 6–12. It contains 36 original illustrated lessons (12 books, grades 1–6, 3 core lessons each) and a practice mode with 29 topics. Each lesson follows look at a picture → manipulate the picture → answer 3 questions, and every question in the app has a diagram. The app has no account, no server and no ads; progress is stored on the device.",
     practices: {
       onDevice:
         "Lesson progress, stars, XP, level, practice answers, mistakes, streak calendar and app preferences are stored locally on your device with SwiftData and UserDefaults. They are never transmitted to us.",
@@ -244,6 +244,67 @@ const APPS = [
       {
         q: "What should I include in a support email?",
         a: "Include the app name and version, your device model, iOS version, the steps that led to the issue, and a screenshot if possible. Send it to the support email on this page."
+      }
+    ]
+  },
+  {
+    id: "cinecam",
+    name: "CineCam · 光年相机",
+    tagline: "Film-look video camera with ten built-in grades, shot on iPhone.",
+    bundleId: "com.lingyu.CineCam",
+    category: "Photo & Video",
+    platform: "iPhone (iOS 18+)",
+    accent: "#E9B25C",
+    icon: "C",
+    appStoreUrl: "",
+    summary:
+      "CineCam is an on-device video camera with ten built-in film looks, live filter preview, 1080p or 4K recording, trimming and re-grading. Five looks, 1080p recording and two custom presets are free; CineCam Pro unlocks five more looks, 4K and unlimited custom presets. Clips, thumbnails and presets stay on the iPhone. No account, no developer server and no ads.",
+    practices: {
+      onDevice:
+        "Video clips, thumbnails, custom filter presets, app settings and the local purchase entitlement are stored on your device with SwiftData, the app sandbox and UserDefaults. Camera frames and Core Image filter renders are processed entirely on device.",
+      cloud:
+        "No cloud sync, no developer server and no account. Videos are never uploaded by the app. Apple processes App Store purchases and verifies the Pro entitlement through StoreKit.",
+      account: "No account or sign-up is required to use the app.",
+      tracking:
+        "No advertising identifiers, cross-app tracking, device fingerprinting, analytics or third-party SDKs are used.",
+      ads: "The app contains no ads.",
+      purchases:
+        "CineCam Pro is one auto-renewable monthly subscription at US$1.99, processed by Apple through the App Store. We do not receive your card or payment details; Apple provides only aggregate sales reports. Restore Purchases is available on the paywall and in Settings.",
+      dataCollected:
+        "Video clips, thumbnails, custom presets, app preferences and the local purchase entitlement are stored on your device. Photo Library Add access is used only when you export a clip or enable Auto-save to Photos; nothing is transmitted to us."
+    },
+    faqs: [
+      {
+        q: "What is included in the free version?",
+        a: "Five built-in looks (Original, Cinema, Retro, Sunshine and Peach), 1080p recording and export, and up to two custom presets are free. The camera, live preview, library, trimming and re-grading work without a subscription."
+      },
+      {
+        q: "What does CineCam Pro include?",
+        a: "Pro unlocks five additional looks (Teal Mist, Silver, Neon, Cool Blue and Polaroid), 4K recording and export, and unlimited custom presets. It is one monthly auto-renewable subscription at US$1.99 with no trial and no other plan."
+      },
+      {
+        q: "Are my videos uploaded anywhere?",
+        a: "No. Camera frames, microphone audio, filter rendering, thumbnails, trimming and export all run on your iPhone. CineCam has no account system, no developer server and no cloud sync; videos are never uploaded."
+      },
+      {
+        q: "Why does CineCam ask for Camera, Microphone or Photos permission?",
+        a: "Camera and microphone are requested when you open the camera screen and are used only while recording. Photo Library Add access is requested only when you export a clip or enable Auto-save to Photos. The app does not read your other photos."
+      },
+      {
+        q: "How do I restore Pro on a new iPhone?",
+        a: "Open the paywall from a locked look, the 4K toggle or the Pro card in Settings, then tap Restore Purchases. Sign in with the same Apple Account used for the original purchase."
+      },
+      {
+        q: "How do I cancel the subscription?",
+        a: "Subscriptions are managed by Apple. On your iPhone go to Settings → your name → Subscriptions, select CineCam and choose Cancel Subscription. Cancelling stops the next renewal; the current period stays active until it ends. Deleting the app does not cancel the subscription."
+      },
+      {
+        q: "How do I request a refund?",
+        a: "App Store purchases are billed by Apple. Refund requests are handled at reportaproblem.apple.com. Sign in with the Apple Account that made the purchase and follow the on-screen steps."
+      },
+      {
+        q: "A clip or export is not working. What should I send?",
+        a: "Email the support address on this page with the app version, iPhone model, iOS version, the steps that led to the issue, and a screenshot or screen recording if possible."
       }
     ]
   },

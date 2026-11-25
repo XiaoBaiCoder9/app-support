@@ -6,7 +6,7 @@ A static, multi-app support and privacy-policy website for XiaoBaiCoder9 apps, h
 
 | File | Purpose |
 | --- | --- |
-| `index.html` | Support center: app list, in-app FAQs, general questions, contact entry. Includes Pageo, ID Photo and GlowLens. |
+| `index.html` | Support center: app list, in-app FAQs, general questions, contact entry. Includes Pageo, ID Photo, GlowLens, MathGarden and CineCam. |
 | `privacy.html` | Universal privacy policy plus per-app data practices. Supports `?app=<id>` to highlight one app. |
 | `apps-data.js` | Shared registry: site contact info and every app's details, practices and FAQs. |
 
