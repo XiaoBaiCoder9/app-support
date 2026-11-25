@@ -6,7 +6,7 @@ A static, multi-app support and privacy-policy website for XiaoBaiCoder9 apps, h
 
 | File | Purpose |
 | --- | --- |
-| `index.html` | Support center: app list, in-app FAQs, general questions, contact entry. |
+| `index.html` | Support center: app list, in-app FAQs, general questions, contact entry. Includes Pageo, ID Photo and GlowLens. |
 | `privacy.html` | Universal privacy policy plus per-app data practices. Supports `?app=<id>` to highlight one app. |
 | `apps-data.js` | Shared registry: site contact info and every app's details, practices and FAQs. |
 
@@ -37,8 +37,8 @@ Remove the `template-app` example entry before going public.
 
 ## Placeholders to replace before release
 
-- `SITE.contactEmail` in `apps-data.js` — set the real support mailbox. Reviewers must be able to reach you.
-- Each app's `appStoreUrl` — add the App Store product link when available.
+- `SITE.contactEmail` in `apps-data.js` — currently `2357179575@qq.com`; change only if the support mailbox changes.
+- Each app's `appStoreUrl` — add the App Store product link when available. GlowLens currently has no App Store URL until the app record is created.
 - Verify every `practices` statement matches what the shipped app actually does.
 
 ## Notes

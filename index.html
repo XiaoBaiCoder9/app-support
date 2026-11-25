@@ -319,7 +319,14 @@
       if (q) q.parentElement.classList.toggle("open");
     });
 
-    renderApps("");
+    const initialAppId = currentAppIdFromQuery();
+    const initialApp = initialAppId ? getAppById(initialAppId) : null;
+    if (initialApp) {
+      searchInput.value = initialApp.name;
+      renderApps(initialApp.name);
+    } else {
+      renderApps("");
+    }
     renderGeneralFaqs();
   </script>
 </body>

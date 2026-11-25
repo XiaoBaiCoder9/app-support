@@ -8,9 +8,9 @@
 const SITE = {
   brand: "App Support Center",
   owner: "XiaoBaiCoder9",
-  // Replace this with the real support mailbox before publishing.
+  // Support mailbox for all apps. Reviewers and users must be able to reach it.
   contactEmail: "2357179575@qq.com",
-  effectiveDate: "November 24, 2026",
+  effectiveDate: "November 25, 2026",
   copyright: "© 2026 XiaoBaiCoder9. All rights reserved.",
   reportProblemUrl: "https://reportaproblem.apple.com"
 };
@@ -130,6 +130,67 @@ const APPS = [
       {
         q: "The app crashed or a button does nothing. What should I send?",
         a: "Email our support mailbox with the app version, your device model, iOS version, the steps that led to the issue and a screenshot if possible. We reply within 2 business days."
+      }
+    ]
+  },
+  {
+    id: "glowlens",
+    name: "GlowLens · 光颜相机",
+    tagline: "On-device beauty camera and photo retoucher.",
+    bundleId: "work.qingyunge.glowcamaa",
+    category: "Photo & Video",
+    platform: "iOS",
+    accent: "#0D5F58",
+    icon: "G",
+    appStoreUrl: "",
+    summary:
+      "GlowLens is a local-only beauty camera and photo retoucher. Capture or import a portrait, apply eight beauty controls, eleven filters and eight makeup presets, then use face reshape, local masks, blemish healing, cutout, ID photo, collage and batch tools. Photos and edits stay on your iPhone; no account and no upload.",
+    practices: {
+      onDevice:
+        "Photos you shoot or import, live camera frames, Apple Vision face landmarks, beauty and filter renders, collages and ID photos are processed entirely on your device with AVFoundation, Core Image, Vision and SwiftData. Finished images and thumbnails are stored in the app's local database; a photo is written to your library only when you tap Save.",
+      cloud:
+        "No cloud sync, no developer server and no account. Photos are never uploaded. The Pro entitlement is verified locally by StoreKit.",
+      account: "No account or sign-up is required to use the app.",
+      tracking:
+        "No advertising identifiers, cross-app tracking, device fingerprinting, third-party analytics or third-party SDKs are used.",
+      ads: "The app contains no ads.",
+      purchases:
+        "GlowLens Pro is one auto-renewable monthly subscription processed by Apple through the App Store. We do not receive your card or payment details. The entitlement is cached locally by StoreKit, and Restore Purchases is available on the paywall and Profile screen.",
+      dataCollected:
+        "Photos, edits, thumbnails, app preferences, the daily free-export count and the local purchase entitlement are stored on your device. Nothing is transmitted to us."
+    },
+    faqs: [
+      {
+        q: "Are my photos uploaded anywhere?",
+        a: "No. Camera frames, imported photos, Vision face landmarks, beauty renders and exports are processed on your device. GlowLens has no account system, no developer server and no cloud sync; photos are never uploaded."
+      },
+      {
+        q: "What is included in the free version?",
+        a: "The free plan includes all basic beauty controls, three watermark-free exports per day, a 1440px long edge, seven filters (including Original) and four makeup presets (including Bare). A small watermark appears on the fourth and later exports each day."
+      },
+      {
+        q: "What does GlowLens Pro include?",
+        a: "Pro removes the daily export limit and watermark, raises export to 4096px, unlocks all eleven filters and eight makeup presets, face reshape (slim face, chin, nose, bigger eyes), local radial/linear/brush masks, blemish clone healing, cutout and ID photo, HD collage, batch apply and border templates. It is one monthly subscription with no trial, no yearly and no lifetime option."
+      },
+      {
+        q: "How do I restore Pro on a new device?",
+        a: "Open the paywall from a locked feature or from the Pro card on the Profile screen, then tap Restore Purchases. Sign in with the same Apple ID used for the original purchase."
+      },
+      {
+        q: "How do I cancel the subscription?",
+        a: "Subscriptions are managed by Apple. On your iPhone go to Settings → your name → Subscriptions, select GlowLens, and choose Cancel Subscription. Deleting the app does not cancel the subscription."
+      },
+      {
+        q: "How do I request a refund?",
+        a: "App Store purchases are billed by Apple. Refund requests are handled at reportaproblem.apple.com. Sign in with the Apple ID that made the purchase and follow the steps."
+      },
+      {
+        q: "Does GlowLens guarantee that an ID photo will be accepted?",
+        a: "No. GlowLens provides framing and export tools, but requirements differ by country, agency and application type. Always confirm the current photo specification with the issuing authority before submitting."
+      },
+      {
+        q: "What should I include in a support email?",
+        a: "Include the app name and version, your device model, iOS version, the steps that led to the issue, and a screenshot if possible. Send it to the support email on this page."
       }
     ]
   },
