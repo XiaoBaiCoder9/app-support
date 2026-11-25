@@ -20,6 +20,59 @@ const SITE = {
    before the repository goes public. */
 const APPS = [
   {
+    id: "mathgarden",
+    name: "MathGarden · 数学花园 / 數學花園",
+    tagline: "Picture-first primary maths, fully offline, no account.",
+    bundleId: "com.aicoding.mathgarden",
+    category: "Education",
+    platform: "iPhone (iOS 17+)",
+    accent: "#4F46E5",
+    icon: "123",
+    appStoreUrl: "",
+    summary:
+      "MathGarden is an offline maths learning app for children aged 6–12. It contains 36 original illustrated lessons (12 books, grades 1–6, 3 core lessons each) and a practice mode with 30 topics. Each lesson follows look at a picture → manipulate the picture → answer 3 questions, and every question in the app has a diagram. The app has no account, no server and no ads; progress is stored on the device.",
+    practices: {
+      onDevice:
+        "Lesson progress, stars, XP, level, practice answers, mistakes, streak calendar and app preferences are stored locally on your device with SwiftData and UserDefaults. They are never transmitted to us.",
+      cloud:
+        "No cloud sync and no server of our own. Progress stays on the device; deleting the app deletes the data.",
+      account: "No account or sign-up is required.",
+      tracking:
+        "No advertising identifiers, cross-app tracking, device fingerprinting, analytics or third-party SDKs are used.",
+      ads: "The app contains no ads.",
+      purchases:
+        "The MathGarden Pro monthly auto-renewable subscription is processed by Apple through the App Store. We do not receive your payment details; Apple provides only aggregate sales reports.",
+      dataCollected:
+        "No personal data is collected. Learning progress and preferences are stored only on your device."
+    },
+    faqs: [
+      {
+        q: "Does MathGarden need an internet connection?",
+        a: "No. Lessons, questions and progress all work offline. Network is used only for App Store purchases and restoring them."
+      },
+      {
+        q: "What is free and what does Pro unlock?",
+        a: "All 36 illustrated lessons are free, together with 10 practice questions per day. MathGarden Pro (monthly auto-renewable subscription) unlocks unlimited practice, the full mistakes notebook and progress statistics."
+      },
+      {
+        q: "How do I cancel or manage my subscription?",
+        a: "Open Settings → your name → Subscriptions on your iPhone, select MathGarden and choose Cancel Subscription. Cancelling stops the next renewal; the current period stays active until it ends. Deleting the app does not cancel a subscription."
+      },
+      {
+        q: "I changed device. How do I get Pro back?",
+        a: "Install the app, open the subscription screen and tap “Restore Purchases”. Make sure the device is signed in with the same Apple Account used for the purchase."
+      },
+      {
+        q: "Is my child's data collected?",
+        a: "No. The app collects no personal data, has no ads, no analytics and no third-party SDKs. All progress stays on the device."
+      },
+      {
+        q: "A lesson or question looks wrong. What should I send?",
+        a: "Email our support mailbox with a screenshot and the lesson name (for example “Book 3 · Area”), or the practice topic and question text. Questions are generated locally, so this lets us reproduce it exactly."
+      }
+    ]
+  },
+  {
     id: "pageo",
     name: "Pageo: PDF Scanner",
     tagline: "Scan documents to PDF, private by design.",
