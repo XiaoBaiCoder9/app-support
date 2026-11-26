@@ -310,6 +310,118 @@ const APPS = [
       }
     ]
   },
+
+  {
+    id: "pypal",
+    name: "PyPal · 少儿 Python",
+    tagline: "Learn Python by teaching a little snake to talk — fully offline.",
+    bundleId: "com.aicoding.pypal",
+    category: "Education",
+    platform: "iPhone (iOS 17+)",
+    accent: "#2EC4A6",
+    icon: "🐍",
+    appStoreUrl: "",
+    summary:
+      "PyPal is an offline Python learning app for children aged 8–12. Kids teach a little snake named Pipi to speak by writing real (simplified) Python: 22 levels across 8 islands cover print, variables, arithmetic, if/elif, for/while, lists and functions. Every run is executed by a built-in mini Python interpreter, replayed line by line, compared with the level goal, and rewarded with stars, XP and badges. There is no account, no server, no ads and no third-party SDK.",
+    practices: {
+      onDevice:
+        "Level progress, stars, XP, streak days, badges, daily quiz results, saved code drafts and app preferences are stored locally on your device with SwiftData and UserDefaults. They are never transmitted to us.",
+      cloud:
+        "No cloud sync and no server of our own. Progress and drafts stay on the device; deleting the app deletes the data.",
+      account: "No account or sign-up is required. A display name typed during onboarding is stored only on the device.",
+      tracking:
+        "No advertising identifiers, cross-app tracking, device fingerprinting, analytics or third-party SDKs are used.",
+      ads: "The app contains no ads.",
+      purchases:
+        "The app is fully free and contains no in-app purchases. There is no payment flow.",
+      children:
+        "PyPal is designed for children aged 8–12 and is rated 4+ on the App Store. It has no account, no social feature, no advertising, no analytics and no third-party SDK, and collects no personal data. Learning progress stays on the device. A parent or guardian can contact us at the support email with any privacy question or deletion request.",
+      dataCollected:
+        "No personal data is collected. Learning progress, the locally chosen display name and preferences are stored only on your device."
+    },
+    faqs: [
+      {
+        q: "Does PyPal need an internet connection?",
+        a: "No. All 22 levels, the built-in Python interpreter, daily challenges and progress work completely offline."
+      },
+      {
+        q: "Is the Python real?",
+        a: "PyPal uses a built-in mini Python interpreter that supports the subset taught in the course: print, variables, strings, numbers, lists, if/elif/else, for/while, def/return, break/continue, comparisons and common built-ins. It does not support imports, classes, dictionaries or f-strings, which are outside the course."
+      },
+      {
+        q: "How do I reset my progress?",
+        a: "Open the app → 我的 (Profile) → gear icon → Settings → Reset all progress. This deletes all local learning data on this device and cannot be undone."
+      },
+      {
+        q: "Where is my child's data stored?",
+        a: "Entirely on the device, in Apple's SwiftData store. Nothing is uploaded. Deleting the app removes all data."
+      },
+      {
+        q: "Can two children share one device?",
+        a: "PyPal currently keeps one local learner profile per device. Progress is tied to the device, not to an account."
+      }
+    ]
+  },
+
+  {
+    id: "mathvista",
+    name: "MathVista · 初中数学图形化学习",
+    tagline: "See the maths: 29 chapters, 116 concepts and 8 interactive graph labs.",
+    bundleId: "com.aicoding.mathvista",
+    category: "Education",
+    platform: "iPhone (iOS 17+)",
+    accent: "#2563EB",
+    icon: "📐",
+    appStoreUrl: "",
+    summary:
+      "MathVista is an offline graphic maths learning app for lower-secondary students aged 12–15. It covers 29 chapters and 116 concepts across grades 7–9, with 8 interactive graph labs for linear functions, quadratic functions, geometry, statistics and probability. Practice is organised into 10 topics, each with 3 questions, plus a mixed 10-question session. Every question is paired with a diagram. The app has no account, no server, no ads and no third-party SDK; progress is stored on the device.",
+    practices: {
+      onDevice:
+        "Chapter progress, practice answers, mistakes, daily practice count, subscription state and app preferences are stored locally on your device with SwiftData and UserDefaults. They are never transmitted to us.",
+      cloud:
+        "No cloud sync and no server of our own. Progress stays on the device; deleting the app deletes the data. Network is used only for App Store purchases and restoring them.",
+      account: "No account or sign-up is required.",
+      tracking:
+        "No advertising identifiers, cross-app tracking, device fingerprinting, analytics or third-party SDKs are used.",
+      ads: "The app contains no ads.",
+      purchases:
+        "The MathVista Pro monthly auto-renewable subscription is processed by Apple through the App Store. We do not receive your payment details; Apple provides only aggregate sales reports.",
+      children:
+        "MathVista is designed for students aged 12–15 and is rated 4+ on the App Store. It has no account, no social feature, no advertising, no analytics and no third-party SDK, and collects no personal data. Learning progress stays on the device. A parent, guardian or teacher can contact us at the support email with any privacy question or deletion request.",
+      dataCollected:
+        "No personal data is collected. Learning progress and preferences are stored only on your device."
+    },
+    faqs: [
+      {
+        q: "Does MathVista need an internet connection?",
+        a: "No. All chapters, graph labs, practice questions and progress work offline. Network is used only for App Store purchases and restoring them."
+      },
+      {
+        q: "What is free and what does MathVista Pro unlock?",
+        a: "All 29 chapters, 116 concepts and 8 graph labs are free, together with 10 practice questions per day. MathVista Pro (monthly auto-renewable subscription) unlocks unlimited practice and the complete practice statistics."
+      },
+      {
+        q: "How do I cancel or manage my subscription?",
+        a: "Open Settings → your name → Subscriptions on your iPhone, select MathVista and choose Cancel Subscription. Cancelling stops the next renewal; the current period stays active until it ends. Deleting the app does not cancel a subscription."
+      },
+      {
+        q: "I changed device. How do I get Pro back?",
+        a: "Install the app, open the subscription screen and tap “Restore Purchases”. Make sure the device is signed in with the same Apple Account used for the purchase."
+      },
+      {
+        q: "How is practice organised?",
+        a: "Open the Practice tab, choose one of the 10 topics or the mixed session, then answer 3 questions for a topic or 10 random questions for the mixed session. Each question includes a diagram and a worked explanation after you answer."
+      },
+      {
+        q: "Is my child's data collected?",
+        a: "No. The app collects no personal data, has no ads, no analytics and no third-party SDKs. All progress stays on the device."
+      },
+      {
+        q: "A chapter, graph or question looks wrong. What should I send?",
+        a: "Email our support mailbox with a screenshot and the chapter name (for example “二次函数”) or the practice topic and question text. Everything is generated locally, so this lets us reproduce it exactly."
+      }
+    ]
+  }
 ];
 
 /* ---------- helpers (used by all pages) ---------- */
