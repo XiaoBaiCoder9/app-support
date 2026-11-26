@@ -10,7 +10,7 @@ const SITE = {
   owner: "XiaoBaiCoder9",
   // Support mailbox for all apps. Reviewers and users must be able to reach it.
   contactEmail: "2357179575@qq.com",
-  effectiveDate: "November 25, 2026",
+  effectiveDate: "November 26, 2026",
   copyright: "© 2026 XiaoBaiCoder9. All rights reserved.",
   reportProblemUrl: "https://reportaproblem.apple.com"
 };
@@ -42,6 +42,8 @@ const APPS = [
       ads: "The app contains no ads.",
       purchases:
         "The MathGarden Pro monthly auto-renewable subscription is processed by Apple through the App Store. We do not receive your payment details; Apple provides only aggregate sales reports.",
+      children:
+        "MathGarden is designed for children aged 6–12 and is rated 4+ on the App Store. It is built for use by children: there is no account, no social feature, no advertising, no analytics and no third-party SDK, and no personal data is collected. Learning progress stays on the device. A parent or guardian can contact us at the support email with any privacy question or deletion request.",
       dataCollected:
         "No personal data is collected. Learning progress and preferences are stored only on your device."
     },

@@ -139,7 +139,7 @@
           </li>
           <li>
             <strong>Children's privacy</strong>
-            <p>Our apps are not directed to children under the age required by applicable law, and we do not knowingly collect personal data from them. If you believe a child has provided us personal data, contact us so we can remove it.</p>
+            <p>Our apps are designed for the age rating shown on each app's store page. Where an app is directed to children, it is built to collect no personal data, with no account, advertising, analytics or third-party tracking; any learning progress stays on the device. If you believe a child has provided us personal data, contact us so we can remove it.</p>
           </li>
           <li>
             <strong>Security</strong>
@@ -205,6 +205,7 @@
           practiceRow("Tracking & analytics", p.tracking) +
           practiceRow("Advertising", p.ads) +
           practiceRow("Purchases", p.purchases) +
+          (p.children ? practiceRow("Children's privacy", p.children) : "") +
         "</div>";
       if (app.template) {
         const note = document.createElement("p");
